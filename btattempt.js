@@ -133,7 +133,7 @@ window.loadLeverJobs = function (options) {
           '<a class="lever-job-title" href="' + groupedPostings[i].teams[j].postings[k].hostedUrl + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</a></u><span class="lever-job-tag">' + '&nbsp;&#8212;&nbsp;' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</br>';
         }
 
-        content += '</ul></ul>';
+        content += '</ul>';
 
       }
       if (haveDepartments) {
