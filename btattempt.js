@@ -126,10 +126,10 @@ window.loadLeverJobs = function (options) {
 
       for (j = 0; j < groupedPostings[i].teams.length; j ++) {
 
-        content += '<ul class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4>';
+        content += '<class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4>';
 
         for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k ++) {
-          content += '<li class="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
+          content += '<class="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
           '<a class="lever-job-title" href="' + groupedPostings[i].teams[j].postings[k].hostedUrl + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</a></u><span class="lever-job-tag">' + '&nbsp;&#8212;&nbsp;' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</br>';
         }
 
