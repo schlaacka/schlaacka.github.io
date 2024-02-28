@@ -133,6 +133,7 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
   const jobLink = document.createElement('a');
   const jobTag = document.createElement('span');
   const locationSpan = document.createElement('span');
+  const fixedJobTitle = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text).replace("& amp;", "&");
   
 
   // Set attributes and content
@@ -140,6 +141,7 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
   jobLink.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text);
   jobLink.style.fontSize = "1.4rem"; // Inline style for font size
   jobLink.style.fontWeight = "bold"; // Maintain bold styling
+  jobLink.textContent = fixedJobTitle;
 
   jobTag.textContent = sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || '';
   jobTag.style.fontSize = "1rem"; // Maintain standard font size
