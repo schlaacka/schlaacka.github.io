@@ -1,7 +1,7 @@
 window.loadLeverJobs = function (options) {
 
   .standard-font-size {
-  font-size: 1rem; /* or 18px for pixel-based font size */
+  font-size: 1rem;
 }
 
 .bold-job-title {
