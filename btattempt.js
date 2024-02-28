@@ -148,7 +148,6 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
 
   // Build the content string
   content += `
-  <br> + 
     <p class="lever-job" 
        data-department="${groupedPostings[i].departmentTitle}" 
        data-team="${groupedPostings[i].teams[j].postings[k].categories.team}" 
