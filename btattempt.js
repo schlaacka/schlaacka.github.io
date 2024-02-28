@@ -126,6 +126,9 @@ window.loadLeverJobs = function (options) {
 
       for (j = 0; j < groupedPostings[i].teams.length; j ++) {
 
+      content += `
+        <br> `;
+        
         //content += '<ul class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4>';
 
 for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
@@ -133,8 +136,6 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
   const jobLink = document.createElement('a');
   const jobTag = document.createElement('span');
   const locationSpan = document.createElement('span');
-  content += `
-    <br> `;
   
 
   // Set attributes and content
