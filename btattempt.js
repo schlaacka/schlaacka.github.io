@@ -129,23 +129,24 @@ window.loadLeverJobs = function (options) {
         //content += '<ul class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4>';
 
 for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
-  // Create elements without inline styles
+  // Create elements
   const jobLink = document.createElement('a');
   const jobTag = document.createElement('span');
   const locationSpan = document.createElement('span');
 
-  // Set attributes and content for each element
-  jobLink.classList.add("lever-job-title", "standard-font-size"); // Apply both classes
+  // Set attributes and content
   jobLink.href = groupedPostings[i].teams[j].postings[k].hostedUrl;
   jobLink.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text);
+  jobLink.style.fontSize = "1rem"; // Inline style for font size
+  jobLink.style.fontWeight = "bold"; // Inline style for bold title
 
-  jobTag.classList.add("lever-job-tag", "standard-font-size"); // Apply both classes
   jobTag.textContent = sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || '';
+  jobTag.style.fontSize = "1rem"; // Inline style for font size
 
-  locationSpan.classList.add("standard-font-size"); // Apply standard font size class
   locationSpan.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '';
+  locationSpan.style.fontSize = "1rem"; // Inline style for font size
 
-  // Build the content string with correct structure
+  // Build the content string
   content += `
     <p class="lever-job" 
        data-department="${groupedPostings[i].departmentTitle}" 
@@ -154,23 +155,22 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
        data-work-type="${groupedPostings[i].teams[j].postings[k].categories.commitment}">
       `;
 
-  content += jobLink.outerHTML; // Add outerHTML for proper element structure
+  content += jobLink.outerHTML; // Add outerHTML for element structure
 
   content += `
       <br>
       `;
 
-  content += jobTag.outerHTML; // Add outerHTML for proper element structure
+  content += jobTag.outerHTML; // Add outerHTML for element structure
 
   content += ` - `;
 
-  content += locationSpan.outerHTML; // Add outerHTML for proper element structure
+  content += locationSpan.outerHTML; // Add outerHTML for element structure
 
   content += `
     </p>
   `;
 }
-
 
         content += '</ul>';
 
