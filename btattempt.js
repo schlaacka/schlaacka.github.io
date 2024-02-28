@@ -1,11 +1,3 @@
-.standard-font-size {
-  font-size: 1rem;
-}
-
-.bold-job-title {
-  font-weight: bold;
-}
-
 window.loadLeverJobs = function (options) {
 
   //Checking for potential Lever source or origin parameters
