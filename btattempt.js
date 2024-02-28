@@ -136,7 +136,7 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
     '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '" ' +
     '" data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
 
-    `<a class="lever-job-title" href="${groupedPostings[i].teams[j].postings[k].hostedUrl}">` +
+    `<a class="lever-job-title" href="${groupedPostings[i].teams[j].postings[k].hostedUrl}" style="font-weight: bold;">` +
     `${sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text)}` +
     '</a>' +
     '<br>' +
