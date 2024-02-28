@@ -129,25 +129,47 @@ window.loadLeverJobs = function (options) {
         //content += '<ul class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4>';
 
 for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
-  content += 
-    '<p style="font-size: 1rem;" class="lever-job" data-department="' + groupedPostings[i].departmentTitle + '" ' +
-    "data-team='" + groupedPostings[i].teams[j].postings[k].categories.team + '" ' +
-    "data-location='" + groupedPostings[i].teams[j].postings[k].categories.location + '" ' +
-    "data-work-type='" + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
+  // Create elements without inline styles
+  const jobLink = document.createElement('a');
+  const jobTag = document.createElement('span');
+  const locationSpan = document.createElement('span');
 
-    `<a class="lever-job-title" href="${groupedPostings[i].teams[j].postings[k].hostedUrl}" style="font-size: 1rem;">` +
-    `${sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text)}` +
-    `</a>` +
+  // Set attributes and content for each element
+  jobLink.classList.add("lever-job-title", "bold-job-title");
+  jobLink.href = groupedPostings[i].teams[j].postings[k].hostedUrl;
+  jobLink.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text);
 
-    `<span class="lever-job-tag" style="font-size: 1rem;">` +
-    '<br>' +
-    `${sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || ''}` +
-    '<p>' +
-    '&nbsp;&#8212;&nbsp;' +
-    `${sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || ''}` +
-    '<br>' +
-    '</span>';
+  jobTag.classList.add("lever-job-tag");
+  jobTag.textContent = sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || '';
+
+  locationSpan.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '';
+
+  // Build the content string with correct structure
+  content += `
+    <p class="lever-job" 
+       data-department="${groupedPostings[i].departmentTitle}" 
+       data-team="${groupedPostings[i].teams[j].postings[k].categories.team}" 
+       data-location="${groupedPostings[i].teams[j].postings[k].categories.location}" 
+       data-work-type="${groupedPostings[i].teams[j].postings[k].categories.commitment}">
+      `;
+
+  content += jobLink.outerHTML; // Add outerHTML for proper element structure
+
+  content += `
+      <br>
+      `;
+
+  content += jobTag.outerHTML; // Add outerHTML for proper element structure
+
+  content += ` - `;
+
+  content += locationSpan.outerHTML; // Add outerHTML for proper element structure
+
+  content += `
+    </p>
+  `;
 }
+
 
         content += '</ul>';
 
