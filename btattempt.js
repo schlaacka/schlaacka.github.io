@@ -1,5 +1,13 @@
 window.loadLeverJobs = function (options) {
 
+  .standard-font-size {
+  font-size: 1rem; /* or 18px for pixel-based font size */
+}
+
+.bold-job-title {
+  font-weight: bold;
+}
+
   //Checking for potential Lever source or origin parameters
   var pageUrl = window.location.href;
   var leverParameter = '';
@@ -135,13 +143,14 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
   const locationSpan = document.createElement('span');
 
   // Set attributes and content for each element
-  jobLink.classList.add("lever-job-title", "bold-job-title");
+  jobLink.classList.add("lever-job-title", "standard-font-size"); // Apply both classes
   jobLink.href = groupedPostings[i].teams[j].postings[k].hostedUrl;
   jobLink.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text);
 
-  jobTag.classList.add("lever-job-tag");
+  jobTag.classList.add("lever-job-tag", "standard-font-size"); // Apply both classes
   jobTag.textContent = sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || '';
 
+  locationSpan.classList.add("standard-font-size"); // Apply standard font size class
   locationSpan.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '';
 
   // Build the content string with correct structure
