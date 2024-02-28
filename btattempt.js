@@ -14,18 +14,6 @@ window.loadLeverJobs = function (options) {
     leverParameter = '?lever-'+pageUrlSplit[1];
   }
 
-p1 {
-  font-size: 1.4em;
-}
-  
-p2 {
-  font-size: 0.8em;
-}  
-
-p3 {
-  font-size: 1em;
-} 
-
   var htmlTagsToReplace = {
       '&': '&amp;',
       '<': '&lt;',
@@ -142,7 +130,7 @@ p3 {
 
         for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k ++) {
           content += '<li class="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
-          '<p1 class="lever-job-title" href="' + groupedPostings[i].teams[j].postings[k].hostedUrl + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '</p1><span class="lever-job-tag">' + '&nbsp;&#8212;&nbsp;' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</br>';
+          '<a class="lever-job-title" href="' + groupedPostings[i].teams[j].postings[k].hostedUrl + '">' + sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '<a><span class="lever-job-tag">' + </br> + (sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || '') + '&nbsp;&#8212;&nbsp;' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</br>';
         }
 
         content += '</ul>';
