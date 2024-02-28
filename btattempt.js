@@ -132,7 +132,7 @@ window.loadLeverJobs = function (options) {
           content += '<p class="lever-job" data-department="' + groupedPostings[i].departmentTitle +'" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '"data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
           '<a class="lever-job-title" href="' + groupedPostings[i].teams[j].postings[k].hostedUrl + '">' +
           sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text) + '<a><span class="lever-job-tag">' + '</br>' +
-          '<p class="lever-team-title" href="
+          '<p class="lever-team-title" href="' +
           sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || '') + '&nbsp;&#8212;&nbsp;' + (sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '') + '</br>';
         }
 
