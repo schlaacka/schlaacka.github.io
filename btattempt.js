@@ -132,25 +132,19 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
   // Properly close the string being built
   content += 
     '<p class="lever-job" data-department="' + groupedPostings[i].departmentTitle + '" ' +
-    '" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" ' +  // Ensure closing quotation mark before space
-    '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '" ' + // Ensure closing quotation mark before space
-    '" data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +  // Ensure closing quotation mark before closing angle bracket
+    '" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" ' +
+    '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '" ' +
+    '" data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
 
-    // Link creation using template literals
     `<a class="lever-job-title" href="${groupedPostings[i].teams[j].postings[k].hostedUrl}">` +
-    // Use template literals for sanitized text with optional conditional
     `${sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text)}` +
     `<span class="lever-job-tag">` +
     '<br>' +
-    // Use template literals for optional team title and location
-    `${sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || ''}` +
-    '<p>' +
-    '&nbsp;&#8212;&nbsp;' +
+    `${sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || ''} - ` +
     `${sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || ''}` +
     '<br>' +
     '</a>';
 
-  // Add a semicolon
 }
 
         content += '</ul>';
