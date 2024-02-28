@@ -129,24 +129,24 @@ window.loadLeverJobs = function (options) {
         //content += '<ul class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4>';
 
 for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
-  // Properly close the string being built
   content += 
-    '<p class="lever-job" data-department="' + groupedPostings[i].departmentTitle + '" ' +
-    '" data-team="' + groupedPostings[i].teams[j].postings[k].categories.team + '" ' +
-    '" data-location="' + groupedPostings[i].teams[j].postings[k].categories.location + '" ' +
-    '" data-work-type="' + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
+    '<p style="font-size: 1rem;" class="lever-job" data-department="' + groupedPostings[i].departmentTitle + '" ' +
+    "data-team='" + groupedPostings[i].teams[j].postings[k].categories.team + '" ' +
+    "data-location='" + groupedPostings[i].teams[j].postings[k].categories.location + '" ' +
+    "data-work-type='" + groupedPostings[i].teams[j].postings[k].categories.commitment + '">' +
 
-    `<a class="lever-job-title" href="${groupedPostings[i].teams[j].postings[k].hostedUrl}" style="font-weight: bold;">` +
+    `<a class="lever-job-title" href="${groupedPostings[i].teams[j].postings[k].hostedUrl}" style="font-size: 1rem;">` +
     `${sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text)}` +
-    '</a>' +
+    `</a>` +
+
+    `<span class="lever-job-tag" style="font-size: 1rem;">` +
     '<br>' +
-    `<span class="lever-job-tag">` +
     `${sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || ''}` +
-    ' - ' +
+    '<p>' +
+    '&nbsp;&#8212;&nbsp;' +
     `${sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || ''}` +
     '<br>' +
     '</span>';
-
 }
 
         content += '</ul>';
