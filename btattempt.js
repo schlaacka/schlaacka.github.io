@@ -137,7 +137,8 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
   // Set attributes and content
   jobLink.href = groupedPostings[i].teams[j].postings[k].hostedUrl;
   jobLink.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text);
-  jobLink.style.fontSize = "1.4rem"; // Inline style for job title font size
+  jobLink.style.fontSize = "1.4rem"; // Inline style for font size
+  jobLink.style.fontWeight = "bold"; // Maintain bold styling
 
   jobTag.textContent = sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || '';
   jobTag.style.fontSize = "1rem"; // Maintain standard font size
