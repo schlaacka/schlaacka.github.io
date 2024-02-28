@@ -39,7 +39,7 @@ window.loadLeverJobs = function (options) {
       return 'uncategorized';
     }
     string = sanitizeForHTML(string);
-    return string.replace(/\s+/ig, "");
+    return string.replace("");
   }
 
   // Adding the account name to the API URL
