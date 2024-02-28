@@ -139,6 +139,7 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
     `<a class="lever-job-title" href="${groupedPostings[i].teams[j].postings[k].hostedUrl}">` +
     `${sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text)}` +
     '</a>' +
+    '<br>' +
     `<span class="lever-job-tag">` +
     `${sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || ''}` +
     ' - ' +
