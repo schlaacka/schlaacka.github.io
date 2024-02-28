@@ -103,7 +103,7 @@ window.loadLeverJobs = function (options) {
 
     }
     
-    content += '<br>;
+    content += '<br>';
 
     // Sort by department
     groupedPostings.sort(function(a, b) {
