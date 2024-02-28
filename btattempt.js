@@ -137,14 +137,13 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
   // Set attributes and content
   jobLink.href = groupedPostings[i].teams[j].postings[k].hostedUrl;
   jobLink.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].text);
-  jobLink.style.fontSize = "1rem"; // Inline style for font size
-  jobLink.style.fontWeight = "bold"; // Inline style for bold title
+  jobLink.style.fontSize = "1.4rem"; // Inline style for job title font size
 
   jobTag.textContent = sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) || '';
-  jobTag.style.fontSize = "1rem"; // Inline style for font size
+  jobTag.style.fontSize = "1rem"; // Maintain standard font size
 
   locationSpan.textContent = sanitizeForHTML(groupedPostings[i].teams[j].postings[k].categories.location) || '';
-  locationSpan.style.fontSize = "1rem"; // Inline style for font size
+  locationSpan.style.fontSize = "1rem"; // Maintain standard font size
 
   // Build the content string
   content += `
