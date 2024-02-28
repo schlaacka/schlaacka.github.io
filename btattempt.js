@@ -14,6 +14,18 @@ window.loadLeverJobs = function (options) {
     leverParameter = '?lever-'+pageUrlSplit[1];
   }
 
+p1 {
+  font-size: 1.4em;
+}
+  
+p2 {
+  font-size: 0.8em;
+}  
+
+p3 {
+  font-size: 1em;
+} 
+
   var htmlTagsToReplace = {
       '&': '&amp;',
       '<': '&lt;',
