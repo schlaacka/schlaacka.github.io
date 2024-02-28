@@ -102,8 +102,6 @@ window.loadLeverJobs = function (options) {
       }
 
     }
-    
-    content += '<br>';
 
     // Sort by department
     groupedPostings.sort(function(a, b) {
