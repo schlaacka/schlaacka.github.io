@@ -152,8 +152,8 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
        data-department="${groupedPostings[i].departmentTitle}" 
        data-team="${groupedPostings[i].teams[j].postings[k].categories.team}" 
        data-location="${groupedPostings[i].teams[j].postings[k].categories.location}" 
-       data-work-type="${groupedPostings[i].teams[j].postings[k].categories.commitment}">
-      `;
+       data-work-type="${groupedPostings[i].teams[j].postings[k].categories.commitment}"
+       style="font-size: 1rem;">  `;
 
   content += jobLink.outerHTML; // Add outerHTML for element structure
 
