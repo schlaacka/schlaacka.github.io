@@ -121,7 +121,7 @@ window.loadLeverJobs = function (options) {
       };
 
       if (haveDepartments) {
-        content += '<section class="lever-department" data-department="' + groupedPostings[i].departmentTitle + '"><p3 class="lever-department-title">' + sanitizeForHTML(groupedPostings[i].departmentTitle) + '</p3>';
+        content += '<section class="lever-department" data-department="'+ '</br>' + groupedPostings[i].departmentTitle + '"><p3 class="lever-department-title">' + sanitizeForHTML(groupedPostings[i].departmentTitle) + '</p3>' + '</br>';
       };
 
       for (j = 0; j < groupedPostings[i].teams.length; j ++) {
