@@ -121,13 +121,10 @@ window.loadLeverJobs = function (options) {
       };
 
       if (haveDepartments) {
-        content += '</br> <section class="lever-department" data-department="'+ groupedPostings[i].departmentTitle + '"><p3 class="lever-department-title">' + sanitizeForHTML(groupedPostings[i].departmentTitle) + '</p3> </br>';
+        content += '</br></br> <section class="lever-department" data-department="'+ groupedPostings[i].departmentTitle + '"><p3 class="lever-department-title">' + sanitizeForHTML(groupedPostings[i].departmentTitle) + '</p3> </br>';
       };
 
       for (j = 0; j < groupedPostings[i].teams.length; j ++) {
-
-      content += `
-        <br> `;
         
         //content += '<ul class="lever-team" data-team="' + groupedPostings[i].teams[j].teamTitle + '"><h4 class="lever-team-title">' + sanitizeForHTML(groupedPostings[i].teams[j].teamTitle) + '</h4>';
 
