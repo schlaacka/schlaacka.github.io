@@ -133,6 +133,9 @@ for (var k = 0; k < groupedPostings[i].teams[j].postings.length; k++) {
   const jobLink = document.createElement('a');
   const jobTag = document.createElement('span');
   const locationSpan = document.createElement('span');
+  content += `
+    <br> `;
+  
 
   // Set attributes and content
   jobLink.href = groupedPostings[i].teams[j].postings[k].hostedUrl;
